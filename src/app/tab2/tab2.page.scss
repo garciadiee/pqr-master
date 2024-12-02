@@ -1,0 +1,55 @@
+
+
+ion-grid {
+  height: 100%;
+}
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+ion-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  --background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente del botón */
+  --background-hover: rgba(255, 255, 255, 0.3); /* Fondo al pasar el mouse */
+  --border-color: rgba(255, 255, 255, 0.4); /* Borde claro */
+  --color: #fff; /* Color del texto */
+  text-transform: none; /* Elimina el texto en mayúsculas, si prefieres */
+  padding: 1% 0%; /* Ajusta el relleno */
+}
+
+ion-button[fill="outline"] {
+  --background: transparent; /* Sin fondo para botones outline */
+  --color: #fff;
+  border: none;
+}
+
+ion-button:hover {
+  transform: scale(1.05); /* Ligeramente más grande */
+  transition: transform 0.2s ease-in-out;
+}
+
+ion-button:active {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+ion-button ion-icon {
+  margin-right: 8px; /* Ajusta el espaciado */
+  font-size: 1.2em; /* Ajusta el tamaño relativo */
+}
+
+ion-card-header {
+  padding-top: 3%;
+  padding-bottom: 0%;
+}

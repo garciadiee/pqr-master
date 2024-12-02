@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Usuario </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xl="3" size-lg="6" size-md="9" size-xs="6" text-center>
+        <ion-card>
+          <ion-card-header
+            class="ion-justify-content-center ion-align-items-center"
+          >
+            <ion-card-title><ion-icon name="person-circle-outline"></ion-icon></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <ion-item>
+                <ion-input
+                  formControlName="email"
+                  id="email"
+                  placeholder="Ingrese el correo"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input
+                  type="password"
+                  formControlName="password"
+                  id="password"
+                  placeholder="Ingrese contraseña"
+                ></ion-input>
+              </ion-item>
+              <ion-button id="open-loading" size="small" type="submit" style="background-color: rgba(47, 77, 2, 0.557);"
+                ><ion-icon name="log-in-outline"></ion-icon>Iniciar
+                sesión</ion-button>
+
+              <ion-loading
+                trigger="open-loading"
+                message="Cargando..."
+                duration="3000"
+                spinner="circles"
+              ></ion-loading>
+              <ion-button expand="block" size="small" (click)="logout()" style="background-color: rgba(135, 8, 8, 0.487);">
+                <ion-icon name="log-out-outline"></ion-icon>Cerrar
+                sesión</ion-button
+              >
+              <ion-router-link routerLink="/tabs/tab4" id="open-loading">
+                <ion-icon name="log-in-outline"></ion-icon> No tienes Usuario? Resgistrate
+              </ion-router-link>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
