@@ -9,11 +9,13 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss']
 })
+//Register 
 export class Tab4Page {
-  public loginForm: FormGroup;
+  public registerForm: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.loginForm = this.fb.group({
+    this.registerForm = this.fb.group({
+      nombre:[''],
       email: [''],
       password: [''],
     })
@@ -24,16 +26,15 @@ export class Tab4Page {
 
 
   onSubmit() {
-    const loginData = this.loginForm.value;
-    console.log(loginData)
-    this.loginService.login(loginData.email, loginData.password).subscribe({
+    const registerData = this.registerForm.value;
+    console.log(registerData)
+    this.loginService.register(registerData.nombre, registerData.email, registerData.password).subscribe({
       next: (data) => {
-        console.log('Se resgistro')
+        console.log('Se registro')
         this.router.navigate(['/tabs/tab2'])
           .then(() => {
             window.location.reload();
           });
-
       },
       error: (e) => {
         console.log(e)
@@ -41,7 +42,7 @@ export class Tab4Page {
     })
   }
 
-  login() {
+  register() {
 
   }
 

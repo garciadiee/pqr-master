@@ -11,6 +11,7 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
+//geolocalizacion
 export class Tab3Page {
   code: string = '';
   usuario: string = '';

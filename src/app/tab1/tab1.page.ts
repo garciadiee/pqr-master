@@ -8,6 +8,7 @@ import { ParcelaI } from '../interfaces/parcela.interface';
   styleUrls: ['tab1.page.scss']
   
 })
+//Explorar
 export class Tab1Page {
   parcela: ParcelaI[] = [];
   constructor(private apiService: apiService) {}

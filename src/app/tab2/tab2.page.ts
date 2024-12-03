@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
+//login
 export class Tab2Page {
   public loginForm: FormGroup;
 

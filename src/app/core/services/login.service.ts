@@ -45,7 +45,36 @@ export class LoginService {
     //constructor(private readonly http: HttpClient) {}
     private readonly http = inject(HttpClient);
     // URL de nuestra API Rest
-    private readonly url = 'https://ghdh3ltt-3000.brs.devtunnels.ms/api';
+    private readonly url = 'https://zx0wspl3-3000.brs.devtunnels.ms/api';
+    
+    // private readonly url = 'https://ghdh3ltt-3000.brs.devtunnels.ms/api';
+
+    // register(nombre: string, email: string, password: string) {
+    //     console.log(email, password)
+    //     const direction = this.url + '/usuarios/auth/register';
+    //     return this.http.post<ResponseI<string>>(direction,{
+    //         nombre,
+    //         email,
+    //         password,
+    //     })
+    //     .pipe(
+    //         catchError((e) => {
+    //             console.log(e);
+    //             throw new Error(e)
+    //         })
+    // }
+
+    register(nombre: string, email: string, password: string): Observable<any> {
+        const direction = this.url + '/usuarios/auth/register';
+        return this.http.post<any>(direction, { nombre, email, password, })
+          .pipe(
+            catchError((e) => {
+              console.error(e);
+              throw new Error(e);
+            }),
+            
+          );
+      }
 
     login(email: string, password: string) {
         console.log(email,password)

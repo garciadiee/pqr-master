@@ -15,12 +15,19 @@
               <ion-card-title style="font-size:xx-large">Cree su Usuario</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <ion-item>
+                  <ion-input
+                    formControlName="nombre"
+                    id="nombre"
+                    placeholder="Ingrese el nombre"
+                  ></ion-input>
+                </ion-item>
                 <ion-item>
                   <ion-input
                     formControlName="email"
                     id="email"
-                    placeholder="Ingrese el correo"
+                    placeholder="Ingrese el email"
                   ></ion-input>
                 </ion-item>
                 <ion-item>
