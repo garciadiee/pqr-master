@@ -16,8 +16,8 @@ export class Tab3Page {
   code: string = '';
   usuario: string = '';
   ingreso: number = 0;
-  ubiActual: { lat: number, long: number } | null = null;
-  ubiParcela: { lat: number, long: number } | null = null;
+  ubiActual?: { lat: number, long: number } ;
+  ubiParcela?: { lat: number, long: number } ;
   userlong: float = 0;
   ubicar!: Boolean;
 
@@ -84,34 +84,34 @@ export class Tab3Page {
     await alert.present(); // Muestra la alerta
   }
 
-  async scanQRCodeSalida() {
+  // async scanQRCodeSalida() {
     
-    const status = await BarcodeScanner.checkPermission({ force: true });
+  //   const status = await BarcodeScanner.checkPermission({ force: true });
 
-    if (status.granted) {
-      await BarcodeScanner.hideBackground(); // Oculta el fondo de la aplicación para que la cámara sea visible.
+  //   if (status.granted) {
+  //     await BarcodeScanner.hideBackground(); // Oculta el fondo de la aplicación para que la cámara sea visible.
 
-      try {
-        const result = await BarcodeScanner.startScan();
-        if (result.hasContent) {
-          this.code = result.content;
-          console.log('Scanned content:', result.content);
-          localStorage.setItem('code', '')
-          //alert('Scanned QR Code: ' + result.content);
-          this.salirParcela()
-        } else {
-          alert('No QR code found');
-        }
-      } catch (err) {
-        console.log('Error scanning QR code:', err);
-        alert('Error scanning QR');
-      } finally {
-        await BarcodeScanner.showBackground(); // Restaura el fondo después del escaneo.
-      }
-    } else {
-      alert('Camera permission denied');
-    }
-  }
+  //     try {
+  //       const result = await BarcodeScanner.startScan();
+  //       if (result.hasContent) {
+  //         this.code = result.content;
+  //         console.log('Scanned content:', result.content);
+  //         localStorage.setItem('code', '')
+  //         //alert('Scanned QR Code: ' + result.content);
+  //         this.salirParcela()
+  //       } else {
+  //         alert('No QR code found');
+  //       }
+  //     } catch (err) {
+  //       console.log('Error scanning QR code:', err);
+  //       alert('Error scanning QR');
+  //     } finally {
+  //       await BarcodeScanner.showBackground(); // Restaura el fondo después del escaneo.
+  //     }
+  //   } else {
+  //     alert('Camera permission denied');
+  //   }
+  // }
 
   ngOnInit() {
     const usuariodeLocal = localStorage.getItem('userid')!;
@@ -155,14 +155,16 @@ export class Tab3Page {
       });
   }
 
-  obtenerUbicacionParcelas(code: string) {
+  obtenerUbicacionParcelas(code: string) { console.log('code' + this.code)
     this.apiService.getParcelaById(code).subscribe({
       next: (response) => {
         this.ubiParcela = {
+          
           lat: parseFloat(response.result.lat),
           long: parseFloat(response.result.long)
         };
-        console.log(this.ubiParcela)
+        console.log(response.result),
+        console.log('ubicacion parcela' + this.ubiParcela)
       },
       error: () => {
         alert(`hubo un error al salir`);
@@ -193,7 +195,7 @@ export class Tab3Page {
       console.log('aca devuelve true')
       this.ubicar = true
     }
-    else {
+    else { console.log('hasta aca' + this.ubiParcela)
       console.log('Aca devuelve false')
       this.ubicar = false
     }

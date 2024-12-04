@@ -10,7 +10,7 @@ import { ResponseI } from './interfaces/response.internface';
 export class apiService  {
   
  //private readonly url = 'http://localhost:3002/api';
-   private readonly url = 'https://zx0wspl3-3000.brs.devtunnels.ms/api';
+   private readonly url = 'https://9b00mwp7-3000.brs.devtunnels.ms/api';
 
 
   constructor(private http: HttpClient) { }
@@ -20,6 +20,9 @@ export class apiService  {
   }
 
   getParcelaById(code:string):Observable<ResponseI>{
-    return this.http.get<ResponseI>(`${this.url}/parcelas/${code}`);
+    console.log('pasexaca')
+    return this.http
+    .get<ResponseI>(`${this.url}/parcelas/${code}`)
+    ;
   }
 }

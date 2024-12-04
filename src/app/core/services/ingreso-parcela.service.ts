@@ -8,7 +8,7 @@ export class IngresoParcelaService {
     //constructor(private readonly http: HttpClient) {}
     private readonly http = inject(HttpClient);
     // URL de nuestra API Rest
-    private readonly url = 'https://zx0wspl3-3000.brs.devtunnels.ms/api';
+    private readonly url = 'https://9b00mwp7-3000.brs.devtunnels.ms/api';
     // private readonly url = 'https://ghdh3ltt-3000.brs.devtunnels.ms/api';
 
     ingresar(usuarioId: string, parcelaId: string) {
