@@ -65,6 +65,7 @@ export class LoginService {
     // }
 
     register(nombre: string, email: string, password: string): Observable<any> {
+        console.log(email, password)
         const direction = this.url + '/usuarios/auth/register';
         return this.http.post<any>(direction, { nombre, email, password, })
           .pipe(

@@ -55,7 +55,7 @@ export class Tab3Page {
             } else {
               this.presentAlert('Advertencia', 'Estás muy lejos de la parcela.');
             }
-          }, 900);
+          }, 2000);
   
           // Check `this.ubicar` after all async operations
 

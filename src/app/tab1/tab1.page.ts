@@ -10,15 +10,17 @@ import { ParcelaI } from '../interfaces/parcela.interface';
 })
 //Explorar
 export class Tab1Page {
-  parcela: ParcelaI[] = [];
+  parcelas: ParcelaI[] = [];
   constructor(private apiService: apiService) {}
 
   ngOnInit(): void {
     this.apiService.getAllParcelas().subscribe({
       next: (response) => {
         if (response.ok) {
+          //objeto respose ok entones muestra el obj completo
           console.log(response)
-          this.parcela = response.result.data
+          this.parcelas = response.result.data
+          console.log(this.parcelas)
         } else {
           console.error('Error en la respuesta:', response.msg);
         }
