@@ -8,6 +8,7 @@ ion-row {
   align-items: center;
   justify-content: center;
   height: 100%;
+  
 }
 
 ion-item {
@@ -52,4 +53,24 @@ ion-button ion-icon {
 ion-card-header {
   padding-top: 3%;
   padding-bottom: 0%;
+}
+
+.register-link{
+  text-align: center;
+  color:white
+}
+
+.register-link > p:hover{
+  color:black
+}
+
+
+@media screen and (max-width: 600px) { //se aplican ese codigo en base a ese max width, osea si la pantalla es mas chicha (antes de los 600px) se aplican los cambios
+  ion-row {
+    display: flex;
+    align-items: center;
+    width: 90vh;
+    height: 100%;
+    justify-content:start; 
+  }
 }

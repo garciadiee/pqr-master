@@ -8,11 +8,11 @@
   .centered-title {
     font-size: 1.2rem;
     font-weight: 500;
-    text-align: center;
-    color: #271583; /* Violeta medio */
+    text-align: start;
+    color: #ffffff; /* Violeta medio */
     margin: 10px 0;
     padding: 10px;
-    background: linear-gradient(145deg, #c9e3ff, #eaf4ff); /* Fondo degradado azul celeste */
+    background: #ffffff46; /* Fondo degradado azul celeste */
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     margin:10%;
@@ -28,21 +28,32 @@
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px; /* Espaciado entre letras */
-    text-shadow: 1px 1px 4px rgba(76, 93, 255, 0.5); /* Sombra sutil */
+    text-shadow:  0 4px 6px rgba(113, 255, 94, 0.3)/* Sombra sutil */
   }
   
   /* Botón personalizado */
+
   ion-button {
-    --background: linear-gradient(145deg, #7a5eff, #4c5dff); /* Degradado violeta a azul */
-    --color: white; /* Texto blanco */
-    --box-shadow: 0 4px 6px rgba(122, 94, 255, 0.3); /* Sombra sutil */
-    border-radius: 8px;
-    margin-top:40%;
-    margin-bottom: 5%;
-    padding:3%;
-    font-weight: 600;
-    margin: 10px 0;
-    padding: 10px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente del botón */
+    --background-hover: rgba(255, 255, 255, 0.3); /* Fondo al pasar el mouse */
+    --border-color: rgba(255, 255, 255, 0.4); /* Borde claro */
+    --color: #fff; /* Color del texto */
+    text-transform: none; /* Elimina el texto en mayúsculas, si prefieres */
     border-radius: 10px;
-    
+    margin: 10px 0;
+    padding: 10px;
+    margin:10%;
+  }
+  
+
+  ion-button:hover {
+    transform: scale(1.05); /* Ligeramente más grande */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  ion-button:active {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
   }

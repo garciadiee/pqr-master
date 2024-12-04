@@ -53,3 +53,13 @@ ion-card-header {
   padding: 3%;
 
 }
+
+@media screen and (max-width: 600px) { //se aplican ese codigo en base a ese max width, osea si la pantalla es mas chicha (antes de los 600px) se aplican los cambios
+  ion-row {
+    display: flex;
+    align-items: center;
+    width: 90vh;
+    height: 100%;
+    justify-content:start; 
+  }
+}

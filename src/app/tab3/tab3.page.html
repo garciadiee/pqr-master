@@ -17,6 +17,6 @@
   <ion-title class="centered-title">Latitud: {{ubiParcela?.lat}}</ion-title>
   <ion-title class="centered-title">Longitud: {{ubiParcela?.long}}</ion-title>
 
-  <!-- <ion-button *ngIf="ingreso!=0" expand="block" (click)="scanQRCodeSalida()">Salir ahora</ion-button> -->
-  <ion-button *ngIf="ingreso==0" expand="block" (click)="scanQRCode()">Ingresar ahora</ion-button>
+  <ion-button style="background-color: rgba(47, 77, 2, 0.557);" *ngIf="ingreso!=0" expand="block" (click)="scanQRCodeSalida()">Salir ahora</ion-button>
+  <ion-button style="background-color: rgba(47, 77, 2, 0.557);" *ngIf="ingreso==0" expand="block" (click)="scanQRCode()">Ingresar ahora</ion-button>
 </ion-content>

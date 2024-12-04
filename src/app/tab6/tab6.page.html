@@ -10,11 +10,11 @@
     <img alt="Silhouette of mountains" src="../../assets//{{p.imagen}}" />
     <ion-card-header>
       <ion-card-title>{{p.nombre}}</ion-card-title>
+      <ion-card-subtitle>${{p.precio}}</ion-card-subtitle>
     </ion-card-header>  
 
     <ion-card-content>
-        <ion-card-subtitle style="font-size:30px; color:rgb(39, 209, 39);">${{p.precio}}</ion-card-subtitle>
-      <ion-card-subtitle style="font-size:25px;">{{p.descripcion}}</ion-card-subtitle>
+      {{p.descripcion}}
     </ion-card-content>
   </ion-card>
 </ion-content>
