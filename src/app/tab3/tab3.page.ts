@@ -5,6 +5,7 @@ import { GeolocationService } from '../core/services/geolocation.service';
 import { apiService } from '../api.service';
 import { float } from '@zxing/library/esm/customTypings';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -182,6 +183,8 @@ export class Tab3Page {
     this.ubiActual.long = parseFloat(this.ubiActual?.long.toFixed(3))
   }
 
+  private readonly router = inject(Router);
+
   compararUbicaciones() {
 
     if (
@@ -194,6 +197,8 @@ export class Tab3Page {
     ) {
       console.log('aca devuelve true')
       this.ubicar = true
+      this.router.navigate(['/tabs/tab6']);
+      
     }
     else { console.log('hasta aca' + this.ubiParcela)
       console.log('Aca devuelve false')

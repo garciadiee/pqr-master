@@ -1,11 +1,59 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Explorar Parcelas</ion-title>
+    <ion-title>Cuidado de Parcelas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="parcelas.length === 0">Cargando parcelas...</div>
+
+  <!-- Información sobre el cuidado de las parcelas -->
+  <ion-card class="care-card">
+    <ion-card-header>
+      <ion-card-title>Respetemos la Naturaleza</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Es importante mantener el orden y la limpieza de las parcelas para asegurar un ambiente agradable y respetuoso para todos. Te pedimos que por favor:
+      <ul>
+        <li>Recoges toda la basura y residuos generados durante tu estancia.</li>
+        <li>Dejes el lugar tal como lo encontraste, sin modificar el entorno natural.</li>
+        <li>Respetes las normas del lugar para garantizar la comodidad de todos los usuarios.</li>
+      </ul>
+      ¡Gracias por tu colaboración!
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Orden y Limpieza</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Es fundamental mantener el orden y la limpieza de las parcelas para disfrutar de un ambiente agradable y respetuoso. Por favor, sigue estas recomendaciones:
+      <ul>
+        <li>Recoge toda la basura y residuos generados durante tu estancia.</li>
+        <li>Deja el lugar tal como lo encontraste, sin alterar el entorno natural.</li>
+        <li>Respetar las normas del lugar para garantizar la comodidad de todos.</li>
+      </ul>
+      ¡Gracias por contribuir a la preservación de este espacio!
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Protejamos la Fauna</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Para proteger el ecosistema local y el bienestar de los animales, es importante no alimentarlos. Recuerda que:
+      <ul>
+        <li>El alimento humano no es adecuado para la fauna local.</li>
+        <li>Al alimentarlos, se altera su comportamiento natural y pueden perder su capacidad para buscar comida por sí mismos.</li>
+        <li>Evita dejar restos de comida que puedan atraer animales.</li>
+      </ul>
+      ¡Ayudemos a mantener el equilibrio natural del área!
+    </ion-card-content>
+  </ion-card>
+  
+
+  <!-- Listado de parcelas -->
   <ion-card *ngFor="let p of parcelas" class="centered-card">
     <img alt="Silhouette of mountains" src="../../assets//{{p.imagen}}" />
     <ion-card-header>
